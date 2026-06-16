@@ -110,6 +110,72 @@
       box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(124, 58, 237, 0.08);
     }
 
+    /* 個人照片圓形質感樣式 */
+    .profile-circle {
+      width: min(300px, 100%);
+      aspect-ratio: 1 / 1;
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+      background: radial-gradient(circle at top, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.55) 30%, rgba(255, 255, 255, 0.18) 55%, rgba(255, 255, 255, 0));
+      box-shadow: 0 26px 64px rgba(15, 23, 42, 0.24);
+    }
+    .profile-circle::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 999px;
+      box-shadow: inset 0 0 0 12px rgba(255, 255, 255, 0.76), inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+      pointer-events: none;
+    }
+    .profile-circle::after {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+    .profile-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 24%;
+      transform: scale(1.02);
+    }
+
+    .profile-card {
+      background: rgba(16, 24, 40, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 32px 70px rgba(15, 23, 42, 0.28);
+      border-radius: 2rem;
+      padding: 2rem;
+    }
+    .profile-card h3 {
+      color: #ffffff;
+    }
+    .profile-card p {
+      color: rgba(255, 255, 255, 0.72);
+    }
+    .profile-card .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.86rem;
+      margin-top: 0.9rem;
+    }
+    .profile-card small {
+      display: block;
+      margin-top: 0.75rem;
+      color: rgba(255, 255, 255, 0.58);
+    }
+
     /* 隱藏滾動條但保留功能 */
     .no-scrollbar::-webkit-scrollbar {
       display: none;
@@ -149,7 +215,7 @@
         <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-primary to-brand-secondary flex items-center justify-center text-white font-extrabold text-lg shadow-sm transition-transform duration-300 group-hover:scale-105">
           T
         </div>
-        <span class="font-bold text-xl tracking-tight text-slate-900">Tofu <span class="text-brand-primary font-medium">Lab</span></span>
+        <span class="font-bold text-xl tracking-tight text-neutral-dark">Tofu <span class="text-brand-primary font-medium">Lab</span></span>
       </a>
 
       <!-- 桌面端選單 -->
@@ -171,21 +237,21 @@
       </div>
 
       <!-- 行動端漢堡選單按鈕 -->
-      <button class="md:hidden flex items-center p-2 text-slate-600 hover:text-slate-950 focus:outline-none" id="mobile-menu-btn" aria-label="Toggle Menu">
+      <button class="md:hidden flex items-center p-2 text-neutral-base hover:text-slate-950 focus:outline-none" id="mobile-menu-btn" aria-label="Toggle Menu">
         <i data-lucide="menu" class="w-6 h-6 transition-transform duration-300" id="hamburger-icon"></i>
       </button>
 
     </div>
 
     <!-- 行動端下拉式選單 -->
-    <div class="md:hidden hidden absolute top-full left-0 w-full glass-panel border-t border-slate-100 py-6 px-6 flex-col space-y-4 shadow-lg transition-all duration-300" id="mobile-menu">
-      <a href="#hero" class="mobile-nav-link text-slate-600 hover:text-brand-primary text-base font-medium py-1">首頁</a>
-      <a href="#about" class="mobile-nav-link text-slate-600 hover:text-brand-primary text-base font-medium py-1">關於我</a>
-      <a href="#solutions" class="mobile-nav-link text-slate-600 hover:text-brand-primary text-base font-medium py-1">AI 解決方案</a>
-      <a href="#portfolio" class="mobile-nav-link text-slate-600 hover:text-brand-primary text-base font-medium py-1">精選案例</a>
-      <a href="#blog" class="mobile-nav-link text-slate-600 hover:text-brand-primary text-base font-medium py-1">技術部落格</a>
-      <a href="#contact" class="mobile-nav-link text-slate-600 hover:text-brand-primary text-base font-medium py-1">聯絡我</a>
-      <div class="pt-4 border-t border-slate-100">
+    <div class="md:hidden hidden absolute top-full left-0 w-full glass-panel border-t border-neutral-soft py-6 px-6 flex-col space-y-4 shadow-lg transition-all duration-300" id="mobile-menu">
+      <a href="#hero" class="mobile-nav-link text-neutral-base hover:text-brand-primary text-base font-medium py-1">首頁</a>
+      <a href="#about" class="mobile-nav-link text-neutral-base hover:text-brand-primary text-base font-medium py-1">關於我</a>
+      <a href="#solutions" class="mobile-nav-link text-neutral-base hover:text-brand-primary text-base font-medium py-1">AI 解決方案</a>
+      <a href="#portfolio" class="mobile-nav-link text-neutral-base hover:text-brand-primary text-base font-medium py-1">精選案例</a>
+      <a href="#blog" class="mobile-nav-link text-neutral-base hover:text-brand-primary text-base font-medium py-1">技術部落格</a>
+      <a href="#contact" class="mobile-nav-link text-neutral-base hover:text-brand-primary text-base font-medium py-1">聯絡我</a>
+      <div class="pt-4 border-t border-neutral-soft">
         <a href="https://calendar.app.google/x93FBakGWXn8ozhdA" target="_blank" class="w-full justify-center inline-flex items-center space-x-2 px-5 py-3 bg-neutral-dark text-white text-sm font-semibold rounded-full hover:bg-brand-primary transition-all duration-300">
           <span class="w-2 h-2 rounded-full bg-brand-accent breath-indicator"></span>
           <span>預約策略諮詢</span>
@@ -213,14 +279,14 @@
 
       <!-- 打字機標題區 (固定兩行，避免布局晃動) -->
       <div class="h-auto md:h-48 flex flex-col justify-center items-center mb-6">
-        <h1 id="typewriter-line1" class="text-4xl md:text-7xl font-extrabold tracking-tight text-slate-900 mb-4 min-h-[1.2em]"></h1>
-        <p id="typewriter-line2" class="text-xl md:text-3xl font-medium tracking-tight text-slate-500 max-w-3xl min-h-[1.5em]"></p>
+        <h1 id="typewriter-line1" class="text-4xl md:text-7xl font-extrabold tracking-tight text-neutral-dark mb-4 min-h-[1.2em]"></h1>
+        <p id="typewriter-line2" class="text-xl md:text-3xl font-medium tracking-tight text-neutral-base max-w-3xl min-h-[1.5em]"></p>
       </div>
 
       <!-- 創辦人副標題 -->
       <div class="max-w-2xl mx-auto mb-12">
-        <h2 class="text-lg font-bold text-slate-800 mb-2">張皓婷 (Tofu Lab 創辦人)</h2>
-        <p class="text-slate-500 leading-relaxed text-base">
+        <h2 class="text-lg font-bold text-neutral-dark mb-2">張皓婷 (Tofu Lab 創辦人)</h2>
+        <p class="text-neutral-base leading-relaxed text-base">
           專注於 AI 技術研發、高階影像創作與全自動化工作流設計。我們不只提供工具，更致力於將分散的作業環節整合成具備高度可複製、可隨規模擴展的智能工作系統。
         </p>
       </div>
@@ -230,12 +296,12 @@
         <!-- 微互動主按鈕 -->
         <a href="https://calendar.app.google/x93FBakGWXn8ozhdA" target="_blank" 
            id="dynamic-cta" 
-           class="w-full sm:w-auto min-w-[260px] h-14 rounded-full glass-panel border-2 border-brand-primary/40 text-slate-900 font-semibold text-sm flex items-center justify-center transition-all duration-500 shadow-lg group hover:scale-[1.02] active:scale-[0.98]">
+           class="w-full sm:w-auto min-w-[260px] h-14 rounded-full glass-panel border-2 border-brand-primary/40 text-neutral-dark font-semibold text-sm flex items-center justify-center transition-all duration-500 shadow-lg group hover:scale-[1.02] active:scale-[0.98]">
           <span id="dynamic-cta-text" class="transition-all duration-300">開始優化您的工作流</span>
           <i data-lucide="arrow-right" id="dynamic-cta-icon" class="w-4 h-4 ml-2 text-brand-primary transition-transform duration-300 group-hover:translate-x-1"></i>
         </a>
         
-        <a href="#about" class="w-full sm:w-auto inline-flex items-center justify-center px-8 h-14 text-slate-600 hover:text-slate-900 text-sm font-semibold transition-colors duration-300">
+        <a href="#about" class="w-full sm:w-auto inline-flex items-center justify-center px-8 h-14 text-neutral-base hover:text-neutral-dark text-sm font-semibold transition-colors duration-300">
           了解更多解決方案
         </a>
       </div>
@@ -244,7 +310,7 @@
 
     <!-- 底部下滑引導 -->
     <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-1 opacity-60">
-      <span class="text-xs font-semibold text-slate-400 tracking-widest uppercase">Scroll Down</span>
+      <span class="text-xs font-semibold text-neutral-base tracking-widest uppercase">Scroll Down</span>
       <div class="w-5 h-8 border-2 border-slate-300 rounded-full flex items-start justify-center p-1">
         <div class="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce mt-1"></div>
       </div>
@@ -252,7 +318,7 @@
   </section>
 
   <!-- 3. 關於我與品牌定位 (About & Positioning) -->
-  <section id="about" class="py-24 md:py-32 bg-brand-slate relative overflow-hidden border-t border-b border-slate-100">
+  <section id="about" class="py-24 md:py-32 bg-brand-slate relative overflow-hidden border-t border-b border-neutral-soft">
     <div class="absolute top-0 right-0 w-[500px] h-[500px] ambient-glow-1 rounded-full pointer-events-none blur-3xl"></div>
     <div class="absolute bottom-0 left-0 w-[500px] h-[500px] ambient-glow-2 rounded-full pointer-events-none blur-3xl"></div>
 
@@ -261,9 +327,41 @@
       <!-- Section header -->
       <div class="max-w-3xl mb-16 md:mb-24">
         <span class="text-xs tracking-widest text-brand-primary font-bold uppercase block mb-4">Core Philosophy & Strategy</span>
-        <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-neutral-dark tracking-tight leading-tight">
           工具層出不窮，但您真正缺少的，是能無縫整合、自動落地的智能流程架構。
         </h2>
+      </div>
+
+      <div class="grid gap-8 lg:grid-cols-[0.95fr_1.25fr] items-start mb-12">
+        <div class="flex flex-col items-center lg:items-start gap-6">
+          <div class="profile-circle flex-shrink-0">
+            <img src="./mywork/張皓婷-headshot-01.jpg" alt="張皓婷 Headshot" loading="lazy" />
+          </div>
+          <div class="profile-card w-full max-w-md">
+            <h3 class="text-xl font-bold mb-3">張皓婷 | Tofu Lab 創辦人</h3>
+            <p>專注於 AI 影像自動化、品牌攝影與流程轉換，將高階影像與智能工作流結合成可落地、可複製的商業解決方案。</p>
+            <span class="chip">
+              <span class="w-2 h-2 rounded-full bg-brand-primary"></span>
+              真實場域 × 智能流程 × 品牌影像
+            </span>
+            <small>形象打造、位置定位、視覺與科技整合的一體式品牌名片。</small>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <div class="profile-card">
+            <p class="text-sm text-white/80">這裡是張皓婷的視覺與策略節點，透過個人品牌與專業實戰案例，展現從前端攝影場景到後端影像工作流的完整落地能力。</p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="profile-card">
+              <h4 class="text-sm font-semibold text-white mb-3">品牌創辦人</h4>
+              <p class="text-sm text-white/75">用影像與自動化將複雜流程轉化為可複製的商業運行系統。</p>
+            </div>
+            <div class="profile-card">
+              <h4 class="text-sm font-semibold text-white mb-3">專案影像</h4>
+              <p class="text-sm text-white/75">現場拍攝、場記管理、品牌專案紀錄，都是我們在實務中持續交付的關鍵成果。</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- 痛點 vs 解決方案 對比卡片系統 -->
@@ -275,9 +373,9 @@
             <div class="w-12 h-12 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center mb-8">
               <i data-lucide="alert-octagon" class="w-6 h-6"></i>
             </div>
-            <h3 class="text-2xl font-bold text-slate-900 mb-6">痛點直擊 <span class="text-slate-400 font-medium">/ Tool Fatigue</span></h3>
+            <h3 class="text-2xl font-bold text-neutral-dark mb-6">痛點直擊 <span class="text-neutral-base font-medium">/ Tool Fatigue</span></h3>
             
-            <ul class="space-y-5 text-slate-600">
+            <ul class="space-y-5 text-neutral-base">
               <li class="flex items-start">
                 <i data-lucide="x" class="w-5 h-5 text-red-400 mr-3 mt-1 shrink-0"></i>
                 <span><strong>工具極度碎片化：</strong> AI 工具與系統多如牛毛，但各系統獨立，造成人員重複手動輸入、頻繁切換。</span>
@@ -293,7 +391,7 @@
             </ul>
           </div>
           
-          <div class="pt-8 border-t border-slate-100 mt-8 text-xs text-slate-400 font-semibold tracking-wider uppercase">
+          <div class="pt-8 border-t border-neutral-soft mt-8 text-xs text-neutral-base font-semibold tracking-wider uppercase">
             The traditional bottleneck
           </div>
         </div>
@@ -308,9 +406,9 @@
             <div class="w-12 h-12 rounded-2xl bg-primary-light text-brand-primary flex items-center justify-center mb-8">
               <i data-lucide="zap" class="w-6 h-6"></i>
             </div>
-            <h3 class="text-2xl font-bold text-slate-900 mb-6">完美解答 <span class="text-brand-primary font-medium">/ Workflow Systematization</span></h3>
+            <h3 class="text-2xl font-bold text-neutral-dark mb-6">完美解答 <span class="text-brand-primary font-medium">/ Workflow Systematization</span></h3>
             
-            <ul class="space-y-5 text-slate-600">
+            <ul class="space-y-5 text-neutral-base">
               <li class="flex items-start">
                 <i data-lucide="check" class="w-5 h-5 text-brand-accent mr-3 mt-1 shrink-0"></i>
                 <span><strong>頂級影像實戰 × AI 整合：</strong> 結合多年空間與行銷攝影一線實務，將 AI 生成式設計與實地拍攝完美流程化。</span>
@@ -328,7 +426,7 @@
 
           <div class="pt-8 border-t border-slate-150 mt-8 flex items-center justify-between">
             <span class="text-xs text-brand-primary font-bold tracking-wider uppercase">Bridging Technology & Artistry</span>
-            <span class="text-xs text-slate-400 font-medium">Founded by Tofu Chang</span>
+            <span class="text-xs text-neutral-base font-medium">Founded by Tofu Chang</span>
           </div>
         </div>
 
@@ -344,10 +442,10 @@
       <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-20">
         <span class="text-xs tracking-widest text-brand-primary font-bold uppercase block mb-4">Enterprise-grade Architecture</span>
-        <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-neutral-dark tracking-tight mb-6">
           四大核心 AI 智動化架構
         </h2>
-        <p class="text-slate-500 text-lg">
+        <p class="text-neutral-base text-lg">
           提供客製、可信賴且極具生產力提升效果的業務解決方案，為企業建立永續的科技競爭壁壘。
         </p>
       </div>
@@ -361,13 +459,13 @@
             <div class="w-14 h-14 rounded-2xl bg-primary-light text-brand-primary flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
               <i data-lucide="users-round" class="w-7 h-7"></i>
             </div>
-            <h3 class="text-2xl font-bold text-slate-900 mb-4">企業組織賦能</h3>
-            <p class="text-slate-500 leading-relaxed mb-6">
+            <h3 class="text-2xl font-bold text-neutral-dark mb-4">企業組織賦能</h3>
+            <p class="text-neutral-base leading-relaxed mb-6">
               客製化部署企業內部的 AI 應用系統（包含銷售助理、內部知識庫、引導對話機器人）。同時為企業團隊提供高含金量的 AI 實戰與流程化教育訓練，全方位提升團隊科技素養。
             </p>
           </div>
-          <div class="pt-6 border-t border-slate-100 flex items-center justify-between text-xs font-semibold tracking-wider uppercase">
-            <span class="text-slate-400">01 / Enablement</span>
+          <div class="pt-6 border-t border-neutral-soft flex items-center justify-between text-xs font-semibold tracking-wider uppercase">
+            <span class="text-neutral-base">01 / Enablement</span>
             <span class="text-brand-primary group-hover:translate-x-1 transition-transform duration-200 flex items-center">
               詳細規劃 <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
             </span>
@@ -380,13 +478,13 @@
             <div class="w-14 h-14 rounded-2xl bg-secondary-light text-brand-secondary flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
               <i data-lucide="repeat" class="w-7 h-7"></i>
             </div>
-            <h3 class="text-2xl font-bold text-slate-900 mb-4">工作流程自動化</h3>
-            <p class="text-slate-500 leading-relaxed mb-6">
+            <h3 class="text-2xl font-bold text-neutral-dark mb-4">工作流程自動化</h3>
+            <p class="text-neutral-base leading-relaxed mb-6">
               導入高效率 RPA（機器人流程自動化）與自研 AI 工作流架構。一鍵串接日常重複行政作業、智能報表產出、跨渠道客戶資料自動更新，幫您的核心業務大幅降低時間成本。
             </p>
           </div>
-          <div class="pt-6 border-t border-slate-100 flex items-center justify-between text-xs font-semibold tracking-wider uppercase">
-            <span class="text-slate-400">02 / Automation</span>
+          <div class="pt-6 border-t border-neutral-soft flex items-center justify-between text-xs font-semibold tracking-wider uppercase">
+            <span class="text-neutral-base">02 / Automation</span>
             <span class="text-brand-primary group-hover:translate-x-1 transition-transform duration-200 flex items-center">
               詳細規劃 <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
             </span>
@@ -399,13 +497,13 @@
             <div class="w-14 h-14 rounded-2xl bg-accent-light text-brand-accent flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
               <i data-lucide="palette" class="w-7 h-7"></i>
             </div>
-            <h3 class="text-2xl font-bold text-slate-900 mb-4">內容與創意優化</h3>
-            <p class="text-slate-500 leading-relaxed mb-6">
+            <h3 class="text-2xl font-bold text-neutral-dark mb-4">內容與創意優化</h3>
+            <p class="text-neutral-base leading-relaxed mb-6">
               結合 Stable Diffusion, Midjourney 與自訂影音模型，優化高質量影像素材生產線。為零售、地產、電商等品牌，打造兼顧奢華調性與快速迭代特性的內容產製引擎。
             </p>
           </div>
-          <div class="pt-6 border-t border-slate-100 flex items-center justify-between text-xs font-semibold tracking-wider uppercase">
-            <span class="text-slate-400">03 / Production</span>
+          <div class="pt-6 border-t border-neutral-soft flex items-center justify-between text-xs font-semibold tracking-wider uppercase">
+            <span class="text-neutral-base">03 / Production</span>
             <span class="text-brand-primary group-hover:translate-x-1 transition-transform duration-200 flex items-center">
               詳細規劃 <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
             </span>
@@ -418,13 +516,13 @@
             <div class="w-14 h-14 rounded-2xl bg-neutral-soft text-neutral-dark flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
               <i data-lucide="bar-chart-3" class="w-7 h-7"></i>
             </div>
-            <h3 class="text-2xl font-bold text-slate-900 mb-4">數據驅動應用</h3>
-            <p class="text-slate-500 leading-relaxed mb-6">
+            <h3 class="text-2xl font-bold text-neutral-dark mb-4">數據驅動應用</h3>
+            <p class="text-neutral-base leading-relaxed mb-6">
               建立全方位自動化數據分析管道，為決策者產出即時的營運洞察報表。透過基礎預測模型與業務健康度分析，實現以數據替代直覺的精準商業擴張。
             </p>
           </div>
-          <div class="pt-6 border-t border-slate-100 flex items-center justify-between text-xs font-semibold tracking-wider uppercase">
-            <span class="text-slate-400">04 / Intelligence</span>
+          <div class="pt-6 border-t border-neutral-soft flex items-center justify-between text-xs font-semibold tracking-wider uppercase">
+            <span class="text-neutral-base">04 / Intelligence</span>
             <span class="text-brand-primary group-hover:translate-x-1 transition-transform duration-200 flex items-center">
               詳細規劃 <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
             </span>
@@ -437,18 +535,42 @@
   </section>
 
   <!-- 5. 作品集與案例展示 (Portfolio & Cases) -->
-  <section id="portfolio" class="py-24 md:py-32 bg-brand-slate border-t border-b border-slate-100 overflow-hidden">
+  <section id="portfolio" class="py-24 md:py-32 bg-brand-slate border-t border-b border-neutral-soft overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
       
       <!-- Section Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24">
         <div>
           <span class="text-xs tracking-widest text-brand-primary font-bold uppercase block mb-4">Art meets Engineering</span>
-          <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight">精選專案與影像展示</h2>
+          <h2 class="text-3xl md:text-5xl font-extrabold text-neutral-dark tracking-tight">精選專案與影像展示</h2>
         </div>
-        <p class="text-slate-500 max-w-md mt-4 md:mt-0 leading-relaxed text-sm">
+        <p class="text-neutral-base max-w-md mt-4 md:mt-0 leading-relaxed text-sm">
           展示我們如何將頂級的「空間與品牌影像實務」與「自動化技術」無縫串接，實現設計與數據的雙重爆發。
         </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-6 mb-10">
+        <div class="relative rounded-[2rem] overflow-hidden shadow-2xl border border-neutral-soft bg-white">
+          <img src="./mywork/22cad816-5702-472f-9308-15294a402ec0_rw_3840.jpg" alt="現場攝影專案場景一" loading="lazy" class="w-full h-full min-h-[420px] object-cover" />
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-dark/90 to-transparent p-6">
+            <p class="text-sm font-semibold text-white">專案實拍現場</p>
+            <p class="text-xs text-slate-200">實際攝影場景中的光影與空間布局，展現品牌影像現場強度。</p>
+          </div>
+        </div>
+        <div class="grid gap-6">
+          <div class="relative rounded-[2rem] overflow-hidden shadow-2xl border border-neutral-soft bg-white h-[206px]">
+            <img src="./mywork/28a3d115-0dbc-4a44-bbde-f30362d87930_rw_3840.jpg" alt="專案現場場記拍攝" loading="lazy" class="w-full h-full object-cover" />
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-dark/90 to-transparent p-4">
+              <p class="text-xs font-semibold text-white">專案場記紀錄</p>
+            </div>
+          </div>
+          <div class="relative rounded-[2rem] overflow-hidden shadow-2xl border border-neutral-soft bg-white h-[206px]">
+            <img src="./mywork/f997c059-1250-4e50-bb0d-63207331eed8_rw_3840.jpg" alt="現場專案團隊合作" loading="lazy" class="w-full h-full object-cover" />
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-dark/90 to-transparent p-4">
+              <p class="text-xs font-semibold text-white">團隊協作現場</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- 奢華影像展示網格 (預留 3 個高雅的文字說明 Overlay 效果) -->
@@ -483,7 +605,7 @@
             <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
               <span class="px-3 py-1 rounded-full bg-white/10 text-white text-[10px] font-bold tracking-widest uppercase mb-4 inline-block">Visual × AI</span>
               <h3 class="text-xl font-bold text-white mb-2">空間攝影 × AI 虛擬陳列</h3>
-              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+              <p class="text-neutral-base text-xs leading-relaxed mb-4">
                 針對豪宅地產、品牌空間，運用實地高動態攝影配合 AI 虛擬家具陈列，大幅降低實體裝飾成本，效率提升 400%。
               </p>
               <div class="flex items-center space-x-2 text-brand-accent text-xs font-bold">
@@ -518,7 +640,7 @@
             <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
               <span class="px-3 py-1 rounded-full bg-white/10 text-white text-[10px] font-bold tracking-widest uppercase mb-4 inline-block">Automation</span>
               <h3 class="text-xl font-bold text-white mb-2">多渠道影像自動分發系統</h3>
-              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+              <p class="text-neutral-base text-xs leading-relaxed mb-4">
                 為大型電商串接 PIM 與影像庫，全自動裁切、優化、加浮水印，並自動生成多語系文案發布，每月節省數百人工小時。
               </p>
               <div class="flex items-center space-x-2 text-brand-accent text-xs font-bold">
@@ -554,7 +676,7 @@
             <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
               <span class="px-3 py-1 rounded-full bg-white/10 text-white text-[10px] font-bold tracking-widest uppercase mb-4 inline-block">BI & Analytics</span>
               <h3 class="text-xl font-bold text-white mb-2">智能品牌決策儀表板</h3>
-              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+              <p class="text-neutral-base text-xs leading-relaxed mb-4">
                 整合社交媒體轉化與影像資產點擊，透過前瞻性預測模組，指出最高轉化的視覺風格偏好，使行銷精準度提高 35%。
               </p>
               <div class="flex items-center space-x-2 text-brand-accent text-xs font-bold">
@@ -577,7 +699,7 @@
       <!-- Section Header -->
       <div class="max-w-3xl mb-16 md:mb-24">
         <span class="text-xs tracking-widest text-brand-primary font-bold uppercase block mb-4">Thought Leadership</span>
-        <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-neutral-dark tracking-tight">
           深度思維輸出：自動化與 AI 實戰專欄
         </h2>
       </div>
@@ -589,21 +711,21 @@
         <article class="hover-card-trigger glass-panel rounded-3xl overflow-hidden border border-slate-200/50 flex flex-col justify-between h-full group">
           <div class="p-8">
             <!-- 發布日期與分類 -->
-            <div class="flex items-center space-x-3 text-xs text-slate-400 font-semibold uppercase mb-6">
+            <div class="flex items-center space-x-3 text-xs text-neutral-base font-semibold uppercase mb-6">
               <span>June 2026</span>
-              <span class="w-1 h-1 rounded-full bg-slate-300"></span>
+              <span class="w-1 h-1 rounded-full bg-neutral-soft"></span>
               <span class="text-brand-primary">AI Workflow</span>
             </div>
             
-            <h3 class="text-xl font-bold text-slate-900 mb-4 group-hover:text-brand-primary transition-colors duration-200">
+            <h3 class="text-xl font-bold text-neutral-dark mb-4 group-hover:text-brand-primary transition-colors duration-200">
               <a href="#">如何將 AI 藝術生成與企業工作流深度融合？</a>
             </h3>
-            <p class="text-slate-500 text-sm leading-relaxed mb-6">
+            <p class="text-neutral-base text-sm leading-relaxed mb-6">
               本文為您梳理 Midjourney、SD 與內部 PIM 系統自動串聯的具體技術架構，解決大量電商產品高成本的視覺迭代痛點。
             </p>
           </div>
           
-          <div class="p-8 pt-0 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-500 group-hover:text-slate-900 transition-colors">
+          <div class="p-8 pt-0 border-t border-neutral-soft flex items-center justify-between text-xs font-bold text-neutral-base group-hover:text-neutral-dark transition-colors">
             <span>閱讀全文 (12 Mins)</span>
             <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
           </div>
@@ -612,21 +734,21 @@
         <!-- 文章 2 -->
         <article class="hover-card-trigger glass-panel rounded-3xl overflow-hidden border border-slate-200/50 flex flex-col justify-between h-full group">
           <div class="p-8">
-            <div class="flex items-center space-x-3 text-xs text-slate-400 font-semibold uppercase mb-6">
+            <div class="flex items-center space-x-3 text-xs text-neutral-base font-semibold uppercase mb-6">
               <span>May 2026</span>
-              <span class="w-1 h-1 rounded-full bg-slate-300"></span>
+              <span class="w-1 h-1 rounded-full bg-neutral-soft"></span>
               <span class="text-brand-secondary">Automation</span>
             </div>
             
-            <h3 class="text-xl font-bold text-slate-900 mb-4 group-hover:text-brand-primary transition-colors duration-200">
+            <h3 class="text-xl font-bold text-neutral-dark mb-4 group-hover:text-brand-primary transition-colors duration-200">
               <a href="#">告別重複手動：中小企業導入 RPA 的前三個月實戰指南</a>
             </h3>
-            <p class="text-slate-500 text-sm leading-relaxed mb-6">
+            <p class="text-neutral-base text-sm leading-relaxed mb-6">
               我們在協助上百間企業進行智動化升級後的真實沉澱：如何挑選第一個切入流程，以及避開架構失靈的避坑指標。
             </p>
           </div>
           
-          <div class="p-8 pt-0 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-500 group-hover:text-slate-900 transition-colors">
+          <div class="p-8 pt-0 border-t border-neutral-soft flex items-center justify-between text-xs font-bold text-neutral-base group-hover:text-neutral-dark transition-colors">
             <span>閱讀全文 (18 Mins)</span>
             <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
           </div>
@@ -635,21 +757,21 @@
         <!-- 文章 3 -->
         <article class="hover-card-trigger glass-panel rounded-3xl overflow-hidden border border-slate-200/50 flex flex-col justify-between h-full group">
           <div class="p-8">
-            <div class="flex items-center space-x-3 text-xs text-slate-400 font-semibold uppercase mb-6">
+            <div class="flex items-center space-x-3 text-xs text-neutral-base font-semibold uppercase mb-6">
               <span>April 2026</span>
-              <span class="w-1 h-1 rounded-full bg-slate-300"></span>
+              <span class="w-1 h-1 rounded-full bg-neutral-soft"></span>
               <span class="text-brand-accent">Data-Driven</span>
             </div>
             
-            <h3 class="text-xl font-bold text-slate-900 mb-4 group-hover:text-brand-primary transition-colors duration-200">
+            <h3 class="text-xl font-bold text-neutral-dark mb-4 group-hover:text-brand-primary transition-colors duration-200">
               <a href="#">構建前瞻型數據決策：消除直覺，用數據指導品牌形象</a>
             </h3>
-            <p class="text-slate-500 text-sm leading-relaxed mb-6">
+            <p class="text-neutral-base text-sm leading-relaxed mb-6">
               分析視覺風格與高曝光行銷成效的底層算法。我們將透過自動化的標籤歸因，建立屬於您品牌自身的最佳視覺資產指引。
             </p>
           </div>
           
-          <div class="p-8 pt-0 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-500 group-hover:text-slate-900 transition-colors">
+          <div class="p-8 pt-0 border-t border-neutral-soft flex items-center justify-between text-xs font-bold text-neutral-base group-hover:text-neutral-dark transition-colors">
             <span>閱讀全文 (15 Mins)</span>
             <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
           </div>
@@ -661,7 +783,7 @@
   </section>
 
   <!-- 7. 聯絡我 / 預約諮詢 (Contact & CTA Section) -->
-  <section id="contact" class="py-24 md:py-32 bg-brand-slate relative overflow-hidden border-t border-slate-100">
+  <section id="contact" class="py-24 md:py-32 bg-brand-slate relative overflow-hidden border-t border-neutral-soft">
     <div class="absolute inset-0 grid-bg pointer-events-none opacity-40"></div>
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-radial from-brand-primary/5 to-transparent rounded-full pointer-events-none blur-3xl"></div>
 
@@ -676,42 +798,42 @@
 
         <span class="text-xs tracking-widest text-brand-primary font-bold uppercase block mb-6">Let's Connect</span>
         
-        <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-8">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-neutral-dark tracking-tight leading-tight mb-8">
           準備好將複雜的日常流程<br>轉化為高效運轉的智能工作流了嗎？
         </h2>
         
-        <p class="text-slate-500 max-w-xl mx-auto text-base md:text-lg mb-12 leading-relaxed">
+        <p class="text-neutral-base max-w-xl mx-auto text-base md:text-lg mb-12 leading-relaxed">
           點擊下方開始按鈕，一鍵安排專屬策略諮詢。我們將在一對一深入對話中，為您的企業量身打造落地的 AI 工作系統。
         </p>
 
         <!-- 核心產品與技術解決方案（置於預約區塊之前） -->
         <div class="mb-8">
-          <h3 class="text-lg font-bold text-slate-900 mb-4">核心產品與技術解決方案</h3>
+          <h3 class="text-lg font-bold text-neutral-dark mb-4">核心產品與技術解決方案</h3>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <a href="https://haoting1994.github.io/DTstudio/" target="_blank" class="group glass-panel p-6 rounded-2xl border border-slate-100 hover:shadow-lg flex items-start space-x-4">
+            <a href="https://haoting1994.github.io/DTstudio/" target="_blank" class="group glass-panel p-6 rounded-2xl border border-neutral-soft hover:shadow-lg flex items-start space-x-4">
               <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-slate-100 text-brand-primary text-xl">
                 <i class="fa-solid fa-camera"></i>
               </div>
               <div>
-                <h4 class="text-sm font-bold text-slate-900">攝影棚場景劇本</h4>
-                <p class="text-slate-500 text-sm">系統化管理節目場景，從場佈到攝影機設定，精確紀錄節目流程。</p>
-                <ul class="mt-3 space-y-2 text-sm text-slate-600">
+                <h4 class="text-sm font-bold text-neutral-dark">攝影棚場景劇本</h4>
+                <p class="text-neutral-base text-sm">系統化管理節目場景，從場佈到攝影機設定，精確紀錄節目流程。</p>
+                <ul class="mt-3 space-y-2 text-sm text-neutral-base">
                   <li class="flex items-center"><i class="fa-solid fa-bullseye text-amber-400 mr-3"></i><span>🎯 精準場景標記與節點管理</span></li>
                   <li class="flex items-center"><i class="fa-solid fa-sliders-h text-brand-primary mr-3"></i><span>⚙️ 支援攝影機設定參數一鍵套用</span></li>
-                  <li class="flex items-center"><i class="fa-solid fa-clock text-slate-400 mr-3"></i><span>📋 完整時間軸與流程紀錄</span></li>
+                  <li class="flex items-center"><i class="fa-solid fa-clock text-neutral-base mr-3"></i><span>📋 完整時間軸與流程紀錄</span></li>
                 </ul>
               </div>
             </a>
 
-            <a href="https://haoting1994.github.io/ng-logger/" target="_blank" class="group glass-panel p-6 rounded-2xl border border-slate-100 hover:shadow-lg flex items-start space-x-4">
+            <a href="https://haoting1994.github.io/ng-logger/" target="_blank" class="group glass-panel p-6 rounded-2xl border border-neutral-soft hover:shadow-lg flex items-start space-x-4">
               <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-slate-100 text-brand-primary text-xl">
                 <i class="fa-solid fa-file-lines"></i>
               </div>
               <div>
-                <h4 class="text-sm font-bold text-slate-900">行動場記表</h4>
-                <p class="text-slate-500 text-sm">將紙本場記表數位化，以一屏操作介面一鍵紀錄NG，自動化產生SRT場記表，直接導入剪輯軟體，初剪效率加倍。</p>
-                <ul class="mt-3 space-y-2 text-sm text-slate-600">
+                <h4 class="text-sm font-bold text-neutral-dark">行動場記表</h4>
+                <p class="text-neutral-base text-sm">將紙本場記表數位化，以一屏操作介面一鍵紀錄NG，自動化產生SRT場記表，直接導入剪輯軟體，初剪效率加倍。</p>
+                <ul class="mt-3 space-y-2 text-sm text-neutral-base">
                   <li class="flex items-center"><i class="fa-solid fa-mobile-screen-button text-emerald-400 mr-3"></i><span>📱 一屏操作，現場快速紀錄 NG</span></li>
                   <li class="flex items-center"><i class="fa-solid fa-file-export text-brand-secondary mr-3"></i><span>🎞️ 自動輸出 SRT 場記檔，可直接導入剪輯軟體</span></li>
                   <li class="flex items-center"><i class="fa-solid fa-rocket text-amber-400 mr-3"></i><span>⚡ 初剪工作流效率提升</span></li>
@@ -725,8 +847,8 @@
         <div class="mb-8">
           <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-6">
             <div>
-              <h3 class="text-lg font-bold text-slate-900">外部依賴庫 (Dependencies)</h3>
-              <p class="text-slate-500 text-sm">常用社群與開源連結，快速連通我的網路生態系。</p>
+              <h3 class="text-lg font-bold text-neutral-dark">外部依賴庫 (Dependencies)</h3>
+              <p class="text-neutral-base text-sm">常用社群與開源連結，快速連通我的網路生態系。</p>
             </div>
             <a href="https://forms.gle/Xt7xu2jzAxYjann2A" target="_blank" class="inline-flex items-center justify-center px-5 py-3 rounded-full bg-brand-primary text-white text-sm font-semibold hover:bg-brand-primary/90 transition-colors duration-200">
               填寫需求表單
@@ -734,26 +856,26 @@
           </div>
 
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <a href="https://line.me/ti/p/lNuzClfpiu" target="_blank" class="group glass-panel p-4 rounded-3xl border border-slate-200 hover:border-brand-primary hover:shadow-lg transition-all duration-200 text-slate-800 flex flex-col items-center justify-center space-y-3">
+            <a href="https://line.me/ti/p/lNuzClfpiu" target="_blank" class="group glass-panel p-4 rounded-3xl border border-slate-200 hover:border-brand-primary hover:shadow-lg transition-all duration-200 text-neutral-dark flex flex-col items-center justify-center space-y-3">
               <div class="flex items-center justify-center w-12 h-12 rounded-2xl bg-[#00c300] text-white text-lg shadow-sm">
                 <i class="fa-brands fa-line"></i>
               </div>
               <span class="text-sm font-bold">LINE</span>
             </a>
-            <a href="https://www.facebook.com/haoting1994" target="_blank" class="group glass-panel p-4 rounded-3xl border border-slate-200 hover:border-blue-600 hover:shadow-lg transition-all duration-200 text-slate-800 flex flex-col items-center justify-center space-y-3">
+            <a href="https://www.facebook.com/haoting1994" target="_blank" class="group glass-panel p-4 rounded-3xl border border-slate-200 hover:border-blue-600 hover:shadow-lg transition-all duration-200 text-neutral-dark flex flex-col items-center justify-center space-y-3">
               <div class="flex items-center justify-center w-12 h-12 rounded-2xl bg-blue-600 text-white text-lg shadow-sm">
                 <i class="fa-brands fa-facebook-f"></i>
               </div>
               <span class="text-sm font-bold">Facebook</span>
             </a>
-            <a href="https://www.instagram.com/commonplacedream/" target="_blank" class="group glass-panel p-4 rounded-3xl border border-slate-200 hover:border-pink-500 hover:shadow-lg transition-all duration-200 text-slate-800 flex flex-col items-center justify-center space-y-3">
+            <a href="https://www.instagram.com/commonplacedream/" target="_blank" class="group glass-panel p-4 rounded-3xl border border-slate-200 hover:border-pink-500 hover:shadow-lg transition-all duration-200 text-neutral-dark flex flex-col items-center justify-center space-y-3">
               <div class="flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-r from-fuchsia-500 to-orange-400 text-white text-lg shadow-sm">
                 <i class="fa-brands fa-instagram"></i>
               </div>
               <span class="text-sm font-bold">Instagram</span>
             </a>
-            <a href="https://github.com/haoting1994" target="_blank" class="group glass-panel p-4 rounded-3xl border border-slate-200 hover:border-slate-900 hover:shadow-lg transition-all duration-200 text-slate-800 flex flex-col items-center justify-center space-y-3">
-              <div class="flex items-center justify-center w-12 h-12 rounded-2xl bg-slate-900 text-white text-lg shadow-sm">
+            <a href="https://github.com/haoting1994" target="_blank" class="group glass-panel p-4 rounded-3xl border border-slate-200 hover:border-slate-900 hover:shadow-lg transition-all duration-200 text-neutral-dark flex flex-col items-center justify-center space-y-3">
+              <div class="flex items-center justify-center w-12 h-12 rounded-2xl bg-neutral-dark text-white text-lg shadow-sm">
                 <i class="fa-brands fa-github"></i>
               </div>
               <span class="text-sm font-bold">GitHub</span>
@@ -773,7 +895,7 @@
             <i data-lucide="calendar" class="w-5 h-5 relative z-10 text-brand-accent"></i>
           </a>
           
-          <span class="text-xs text-slate-400 font-semibold tracking-wide">
+          <span class="text-xs text-neutral-base font-semibold tracking-wide">
             或來信聯絡：<a href="mailto:hello@tofulab.co" class="hover:text-brand-primary underline transition-colors">hello@tofulab.co</a>
           </span>
         </div>
@@ -784,13 +906,13 @@
   </section>
 
   <!-- 8. 頁尾 (Footer) -->
-  <footer class="bg-white border-t border-slate-100 py-12 text-center text-xs text-slate-400">
+  <footer class="bg-white border-t border-neutral-soft py-12 text-center text-xs text-neutral-base">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
       
       <!-- Left: Brand Logo -->
       <div class="flex items-center space-x-2">
-        <span class="font-extrabold text-slate-900 tracking-tight">Tofu <span class="text-brand-primary font-medium">Lab</span></span>
-        <span class="text-slate-300">|</span>
+        <span class="font-extrabold text-neutral-dark tracking-tight">Tofu <span class="text-brand-primary font-medium">Lab</span></span>
+        <span class="text-neutral-base">|</span>
         <span>AI 科技與影像自動化專家</span>
       </div>
 
@@ -800,10 +922,10 @@
       </div>
 
       <!-- Right: Social Links -->
-      <div class="flex items-center space-x-4 text-slate-400">
-        <a href="#" class="hover:text-slate-900 transition-colors duration-200">Linkedin</a>
-        <a href="#" class="hover:text-slate-900 transition-colors duration-200">Instagram</a>
-        <a href="#" class="hover:text-slate-900 transition-colors duration-200">Github</a>
+      <div class="flex items-center space-x-4 text-neutral-base">
+        <a href="#" class="hover:text-neutral-dark transition-colors duration-200">Linkedin</a>
+        <a href="#" class="hover:text-neutral-dark transition-colors duration-200">Instagram</a>
+        <a href="#" class="hover:text-neutral-dark transition-colors duration-200">Github</a>
       </div>
 
     </div>
