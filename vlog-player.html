@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台南府城400年 Vol.1 | 當一個Sugar Player - Vlog 招商官方網站</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Noto Sans TC & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            gold: '#D9A74A',
+                            orange: '#F28705',
+                            darkBg: '#090D16',
+                            cardBg: '#131926'
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom video container calculation to ensure absolute cover with zero borders */
+        .video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 56.25vw; /* 16:9 Aspect Ratio */
+            min-height: 100vh;
+            min-width: 177.77vh; /* 16:9 Aspect Ratio */
+            transform: translate(-50%, -50%);
+        }
+        /* Hide YouTube UI and recommendations overlays */
+        iframe {
+            pointer-events: none;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090D16;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D9A74A;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #F28705;
+        }
+    </style>
+</head>
+<body class="bg-brand-darkBg text-neutral-100 font-sans overflow-x-hidden">
+
+    <!-- Top Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black/20 backdrop-blur-md border-b border-white/10" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 bg-gradient-to-tr from-brand-orange to-brand-gold rounded-xl flex items-center justify-center shadow-lg shadow-brand-orange/20 group-hover:rotate-6 transition-all duration-300">
+                    <span class="text-white font-extrabold text-xl tracking-wider">S</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-white font-bold text-lg tracking-wider group-hover:text-brand-gold transition-colors duration-300">Sugar Player</span>
+                    <span class="text-xs text-neutral-400 tracking-widest uppercase">Vlog Marketing Office</span>
+                </div>
+            </a>
+
+            <!-- Menu (Desktop) -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="#concept" class="text-neutral-300 hover:text-brand-gold transition-colors duration-300">企劃理念</a>
+                <a href="#stats" class="text-neutral-300 hover:text-brand-gold transition-colors duration-300">影響力數據</a>
+                <a href="#packages" class="text-neutral-300 hover:text-brand-gold transition-colors duration-300">合作方案</a>
+                <a href="#process" class="text-neutral-300 hover:text-brand-gold transition-colors duration-300">製作流程</a>
+                <a href="#contact" class="px-5 py-2.5 bg-gradient-to-r from-brand-gold to-brand-orange text-brand-darkBg font-bold rounded-lg shadow-lg hover:shadow-brand-orange/40 hover:-translate-y-0.5 transition-all duration-300">
+                    立即洽談合作
+                </a>
+            </nav>
+
+            <!-- Menu Button (Mobile) -->
+            <button class="md:hidden text-white focus:outline-none" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </</button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="fixed inset-0 z-40 bg-brand-darkBg/95 backdrop-blur-xl hidden flex-col justify-center items-center space-y-8 text-xl font-bold transition-all duration-300">
+        <button class="absolute top-6 right-6 text-white text-3xl focus:outline-none" id="closeMenuBtn">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <a href="#concept" class="hover:text-brand-gold transition-colors text-neutral-200">企劃理念</a>
+        <a href="#stats" class="hover:text-brand-gold transition-colors text-neutral-200">影響力數據</a>
+        <a href="#packages" class="hover:text-brand-gold transition-colors text-neutral-200">合作方案</a>
+        <a href="#process" class="hover:text-brand-gold transition-colors text-neutral-200">製作流程</a>
+        <a href="#contact" class="px-8 py-3 bg-gradient-to-r from-brand-gold to-brand-orange text-brand-darkBg font-black rounded-xl shadow-lg shadow-brand-orange/30">
+            立即洽談合作
+        </a>
+    </div>
+
+    <!-- HERO SECTION with Fullscreen Autoplay Video Background -->
+    <section class="relative w-screen h-screen overflow-hidden flex items-center justify-center">
+        <!-- Film Overlay (Gradient to cover video contrast & provide rich colors) -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-brand-darkBg z-10"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-transparent to-black/80 z-10"></div>
+
+        <!-- YouTube Video Wrapper (Pure Responsive Cover) -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <iframe 
+                class="video-background"
+                src="https://www.youtube.com/embed/5glMGfxxONg?autoplay=1&mute=1&playlist=5glMGfxxONg&loop=1&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&disablekb=1" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- Hero Content Overlay -->
+        <div class="relative z-20 text-center px-4 max-w-5xl mx-auto mt-16 animate-fade-in">
+            <!-- Subtitle Badge -->
+            <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full mb-6">
+                <span class="w-2.5 h-2.5 bg-brand-orange rounded-full animate-ping"></span>
+                <span class="text-xs md:text-sm font-semibold tracking-wider text-brand-gold uppercase">台南府城 400 年．Sugar Player 特輯</span>
+            </div>
+
+            <!-- Big Main Heading -->
+            <h1 class="text-4xl md:text-7xl font-black tracking-tight leading-tight mb-6">
+                當一個 <span class="bg-gradient-to-r from-brand-gold via-yellow-400 to-brand-orange bg-clip-text text-transparent">Sugar Player</span><br>
+                用極致質感，重新定義旅遊美食
+            </h1>
+
+            <p class="text-neutral-300 text-base md:text-xl max-w-2xl mx-auto font-light leading-relaxed mb-10">
+                這不只是一部 Vlog，這是一場電影級的城市感官巡禮。融合深厚歷史底蘊與時髦探店語彙，我們邀請領先品牌一同切入精緻旅行與高含金量受眾市場。
+            </p>
+
+            <!-- CTA Button Group -->
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-brand-orange to-brand-gold text-brand-darkBg text-lg font-bold rounded-xl shadow-2xl shadow-brand-orange/40 hover:shadow-brand-orange/60 hover:-translate-y-1 transition-all duration-300">
+                    <i class="fa-solid fa-paper-plane mr-2"></i> 索取品牌合作提案
+                </a>
+                <a href="#concept" class="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 text-white text-lg font-bold rounded-xl hover:-translate-y-1 transition-all duration-300">
+                    探索 Vlog 企劃 <i class="fa-solid fa-arrow-down ml-2 animate-bounce"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll down indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center">
+            <span class="text-xs text-neutral-400 uppercase tracking-widest mb-2">SCROLL DOWN</span>
+            <div class="w-6 h-10 border-2 border-brand-gold/30 rounded-full flex justify-center p-1">
+                <div class="w-1.5 h-2.5 bg-brand-gold rounded-full animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONCEPT SECTION -->
+    <section id="concept" class="relative py-24 bg-gradient-to-b from-brand-darkBg to-neutral-900 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Text Area -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-xs font-bold text-brand-gold tracking-widest uppercase">THE BRAND ESSENCE / 品牌本質</span>
+                    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight">
+                        什麼是 <span class="text-brand-orange">Sugar Player</span> 精神？
+                    </h2>
+                    <p class="text-neutral-400 leading-relaxed text-lg">
+                        台南——這座被開玩笑稱為「連空氣都含糖」的四百年古都。我們拒絕流水帳式的平庸遊記。我們以高對比冷暖調性的極佳影視級運鏡，重新挖掘這座老城的「糖分高光」。
+                    </p>
+                    <p class="text-neutral-400 leading-relaxed text-base">
+                        從永樂市場的偷拍民宅到深夜限定的溫體牛肉湯，從甜到心底的浮水魚羹再到隱密的小酌威士忌酒吧 Moonrock，Sugar Player 以極緻生活品味切入，將日常美食昇華成高級的生活態度，吸引那些對美感與品質極致苛求的千禧世代與 Z 世代高端消費者。
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 bg-brand-gold/10 rounded-lg flex items-center justify-center text-brand-gold flex-shrink-0">
+                                <i class="fa-solid fa-clapperboard"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">電影級 Vlog 技術</h4>
+                                <p class="text-sm text-neutral-400">使用頂級無反相機及高動態焦段，每一影格都是海報級質感。</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 bg-brand-orange/10 rounded-lg flex items-center justify-center text-brand-orange flex-shrink-0">
+                                <i class="fa-solid fa-street-view"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">深度在地視角</h4>
+                                <p class="text-sm text-neutral-400">避開芭樂景點，探討隱藏版故事，引起社群狂熱討論與分享。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preview Card/Visual Area -->
+                <div class="lg:col-span-5">
+                    <div class="relative group">
+                        <!-- Neon Glow behind card -->
+                        <div class="absolute -inset-1 bg-gradient-to-r from-brand-orange to-brand-gold rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
+                        <div class="relative bg-brand-cardBg border border-white/10 rounded-2xl p-6 space-y-6">
+                            <!-- Thumbnail Preview -->
+                            <div class="relative rounded-xl overflow-hidden aspect-video shadow-2xl">
+                                <img src="https://i.ytimg.com/vi/5glMGfxxONg/maxresdefault.jpg" alt="Vlog Preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                                    <div class="w-16 h-16 bg-brand-gold text-brand-darkBg rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition duration-300">
+                                        <i class="fa-solid fa-play text-2xl ml-1"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Vlog Highlight Tags -->
+                            <div>
+                                <div class="flex space-x-2 mb-3">
+                                    <span class="text-[10px] bg-brand-orange/20 text-brand-orange px-2 py-1 rounded font-bold uppercase">台南 400</span>
+                                    <span class="text-[10px] bg-brand-gold/20 text-brand-gold px-2 py-1 rounded font-bold uppercase">深夜美食</span>
+                                    <span class="text-[10px] bg-white/10 text-neutral-300 px-2 py-1 rounded font-bold uppercase">Moonrock Bar</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">當一個 Sugar Player：極致旅行提案</h3>
+                                <p class="text-sm text-neutral-400">打破常規美食探店，透過張室 Chang Shì 精緻的美感鏡頭，帶領品牌體驗府城獨一無二的鹹甜品味學。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS / INFLUENCE SECTION -->
+    <section id="stats" class="relative py-24 bg-brand-darkBg overflow-hidden">
+        <!-- Abstract light rings for high-end styling -->
+        <div class="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-brand-orange/5 rounded-full filter blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-brand-gold/5 rounded-full filter blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-brand-orange tracking-widest uppercase">AUDIENCE & REACH / 受眾影響力</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-2">
+                    精準觸及高消費含金受眾
+                </h2>
+                <p class="text-neutral-400 mt-4">
+                    我們的觀眾不僅熱愛美食旅行，更極力追求有格調的生活氛圍。專為重度生活質感玩家打造。
+                </p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Stat Card 1 -->
+                <div class="bg-gradient-to-b from-white/5 to-white/0 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-md transform hover:-translate-y-1 transition duration-300">
+                    <div class="w-12 h-12 bg-brand-gold/10 rounded-xl flex items-center justify-center text-brand-gold mx-auto mb-4">
+                        <i class="fa-solid fa-users text-2xl"></i>
+                    </div>
+                    <span class="block text-4xl font-extrabold text-white mb-2" id="stat-viewers">120K+</span>
+                    <span class="text-sm text-neutral-400">每集平均觸及人數</span>
+                </div>
+
+                <!-- Stat Card 2 -->
+                <div class="bg-gradient-to-b from-white/5 to-white/0 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-md transform hover:-translate-y-1 transition duration-300">
+                    <div class="w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange mx-auto mb-4">
+                        <i class="fa-solid fa-hourglass-half text-2xl"></i>
+                    </div>
+                    <span class="block text-4xl font-extrabold text-white mb-2">84%</span>
+                    <span class="text-sm text-neutral-400">平均觀眾續看率</span>
+                </div>
+
+                <!-- Stat Card 3 -->
+                <div class="bg-gradient-to-b from-white/5 to-white/0 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-md transform hover:-translate-y-1 transition duration-300">
+                    <div class="w-12 h-12 bg-brand-gold/10 rounded-xl flex items-center justify-center text-brand-gold mx-auto mb-4">
+                        <i class="fa-solid fa-bullseye text-2xl"></i>
+                    </div>
+                    <span class="block text-4xl font-extrabold text-white mb-2">25-39 歲</span>
+                    <span class="text-sm text-neutral-400">主力受眾（高消費力白領）</span>
+                </div>
+
+                <!-- Stat Card 4 -->
+                <div class="bg-gradient-to-b from-white/5 to-white/0 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-md transform hover:-translate-y-1 transition duration-300">
+                    <div class="w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange mx-auto mb-4">
+                        <i class="fa-solid fa-share-nodes text-2xl"></i>
+                    </div>
+                    <span class="block text-4xl font-extrabold text-white mb-2">4.8x</span>
+                    <span class="text-sm text-neutral-400">高於同質影片的分享擴散率</span>
+                </div>
+            </div>
+
+            <!-- Audience Insight Details -->
+            <div class="bg-brand-cardBg/60 border border-white/5 rounded-2xl p-8 md:p-12 mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                <div class="lg:col-span-1">
+                    <h3 class="text-2xl font-bold text-white mb-4">受眾輪廓與消費行為</h3>
+                    <p class="text-sm text-neutral-400 leading-relaxed">
+                        與傳統「CP值導向」的旅遊觀眾不同，我們的受眾重視體驗、美感與生活儀式感。他們願意為了獨特的居住空間、頂級調酒與米其林級美食付出高額溢價。
+                    </p>
+                </div>
+                <div class="lg:col-span-2 space-y-4">
+                    <!-- Progress Bar 1 -->
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-neutral-300 font-medium">偏好高質感、設計感消費品品牌</span>
+                            <span class="text-brand-gold font-bold">89%</span>
+                        </div>
+                        <div class="w-full h-2 bg-neutral-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-brand-gold rounded-full" style="width: 89%"></div>
+                        </div>
+                    </div>
+                    <!-- Progress Bar 2 -->
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-neutral-300 font-medium">願意跟隨 Vlog 行程進行消費探索</span>
+                            <span class="text-brand-orange font-bold">75%</span>
+                        </div>
+                        <div class="w-full h-2 bg-neutral-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-brand-orange rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <!-- Progress Bar 3 -->
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-neutral-300 font-medium">具有良好理財與生活餘裕的高資產上班族</span>
+                            <span class="text-brand-gold font-bold">64%</span>
+                        </div>
+                        <div class="w-full h-2 bg-neutral-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-brand-gold rounded-full" style="width: 64%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PACKAGES SECTION -->
+    <section id="packages" class="relative py-24 bg-neutral-900 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-brand-gold tracking-widest uppercase">COLLABORATION PLANS / 合作方案</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-2">
+                    選擇您的品牌合作形式
+                </h2>
+                <p class="text-neutral-400 mt-4">
+                    為各種行銷規模與品牌調性量身打造，讓您的品牌自然融入高品質影像中。
+                </p>
+            </div>
+
+            <!-- Tier Cards Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Package 1 -->
+                <div class="bg-brand-cardBg border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:border-brand-gold/50 hover:scale-[1.02] transition-all duration-300 relative group">
+                    <div>
+                        <div class="flex justify-between items-center mb-6">
+                            <span class="text-xs font-bold uppercase tracking-wider text-neutral-400 bg-white/5 px-3 py-1.5 rounded-md">置入合作</span>
+                            <span class="text-brand-gold text-2xl"><i class="fa-solid fa-utensils"></i></span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">風味探店置入</h3>
+                        <p class="text-sm text-neutral-400 mb-6">適合精緻餐廳、酒吧、選品店、風格旅宿。將品牌以自然的方式安排進我們當次的 Vlogger 探店行程中，營造高質感的精緻日常偶遇。</p>
+                        
+                        <div class="border-t border-white/5 pt-6 space-y-4">
+                            <div class="flex items-center space-x-3 text-sm text-neutral-300">
+                                <i class="fa-solid fa-check text-brand-gold"></i>
+                                <span>3-5分鐘 深度主觀體驗與推薦</span>
+                            </div>
+                            <div class="flex items-center space-x-3 text-sm text-neutral-300">
+                                <i class="fa-solid fa-check text-brand-gold"></i>
+                                <span>片尾字幕與 Vlog 說明欄品牌導流</span>
+                            </div>
+                            <div class="flex items-center space-x-3 text-sm text-neutral-300">
+                                <i class="fa-solid fa-check text-brand-gold"></i>
+                                <span>授權品牌於社群宣傳轉載</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <a href="#contact" onclick="selectPackage('風味探店置入')" class="block text-center py-3.5 px-4 bg-white/10 hover:bg-brand-gold hover:text-brand-darkBg font-bold rounded-xl transition-all duration-300">
+                            立即諮詢該方案
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Package 2 (Most Popular / Glow effect) -->
+                <div class="bg-gradient-to-b from-brand-cardBg to-neutral-950 border-2 border-brand-gold rounded-2xl p-8 flex flex-col justify-between hover:scale-[1.02] transition-all duration-300 relative shadow-2xl shadow-brand-gold/10">
+                    <!-- Ribbon -->
+                    <span class="absolute -top-3.5 right-6 bg-gradient-to-r from-brand-orange to-brand-gold text-brand-darkBg font-black text-[10px] tracking-widest uppercase px-3 py-1 rounded-full shadow-lg">
+                        RECOMMENDED / 最熱門
+                    </span>
+                    <div>
+                        <div class="flex justify-between items-center mb-6">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-gold bg-brand-gold/10 px-3 py-1.5 rounded-md">專題打造</span>
+                            <span class="text-brand-gold text-2xl"><i class="fa-solid fa-film"></i></span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">深度品牌專屬特輯</h3>
+                        <p class="text-sm text-neutral-400 mb-6">為汽車、高質感精品、科技家電、觀光局或大型旅行集團量身設計。將整集 Vlog 的核心故事線與品牌核心價值完美融合（如駕車漫遊台南）。</p>
+                        
+                        <div class="border-t border-white/5 pt-6 space-y-4">
+                            <div class="flex items-center space-x-3 text-sm text-neutral-300">
+                                <i class="fa-solid fa-check text-brand-gold"></i>
+                                <span class="font-bold text-white">專集企劃：品牌深度情境置入</span>
+                            </div>
+                            <div class="flex items-center space-x-3 text-sm text-neutral-300">
+                                <i class="fa-solid fa-check text-brand-gold"></i>
+                                <span>全片美術風格與品牌色溫微調</span>
+                            </div>
+                            <div class="flex items-center space-x-3 text-sm text-neutral-300">
+                                <i class="fa-solid fa-check text-brand-gold"></i>
+                                <span>YouTube、Instagram Reels 多平台分發</span>
+                            </div>
+                            <div class="flex items-center space-x-3 text-sm text-neutral-300">
+                                <i class="fa-solid fa-check text-brand-gold"></i>
+                                <span>提供高畫質片源授權品牌廣告投放</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <a href="#contact" onclick="selectPackage('深度品牌專屬特輯')" class="block text-center py-3.5 px-4 bg-gradient-to-r from-brand-orange to-brand-gold text-brand-darkBg font-black rounded-xl hover:shadow-lg hover:shadow-brand-orange/30 transition-all duration-300">
+                            立即諮詢該方案
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="bg-brand-cardBg border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:border-brand-gold/50 hover:scale-[1.02] transition-all duration-300 relative group">
+                    <div>
+                        <div class="flex justify-between items-center mb-6">
+                            <span class="text-xs font-bold uppercase tracking-wider text-neutral-400 bg-white/5 px-3 py-1.5 rounded-md">年度共創</span>
+                            <span class="text-brand-gold text-2xl"><i class="fa-solid fa-handshake"></i></span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">年度品牌聯名大使</h3>
+                        <p class="text-sm text-neutral-400 mb-6">極其稀少的席位。我們全年度（約8-10集）深度綁定推廣品牌。不僅在影音內容中，實體行銷活動與社群推廣中我們亦全面為品牌代言站台。</p>
+                        
+                        <div class="border-t border-white/5 pt-6 space-y-4">
+                            <div class="flex items-center space-x-3 text-sm text-neutral-300">
+                                <i class="fa-solid fa-check text-brand-gold"></i>
+                                <span>獨家排他協議（同品類年度唯一）</span>
+                            </div>
+                            <div class="flex items-center space-x-3 text-sm text-neutral-300">
+                                <i class="fa-solid fa-check text-brand-gold"></i>
+                                <span>每一集 Vlog 中皆包含冠名與置入</span>
+                            </div>
+                            <div class="flex items-center space-x-3 text-sm text-neutral-300">
+                                <i class="fa-solid fa-check text-brand-gold"></i>
+                                <span>實體聯名包裝、實體線下沙龍活動合辦</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <a href="#contact" onclick="selectPackage('年度品牌聯名大使')" class="block text-center py-3.5 px-4 bg-white/10 hover:bg-brand-gold hover:text-brand-darkBg font-bold rounded-xl transition-all duration-300">
+                            立即諮詢該方案
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE SECTION -->
+    <section id="process" class="py-24 bg-brand-darkBg relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-brand-orange tracking-widest uppercase">WORKFLOW / 創作與執行流程</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-2">
+                    我們如何打造神級 Vlog
+                </h2>
+                <p class="text-neutral-400 mt-4">
+                    嚴謹的提案與美學堅持，確保每一次產出的商業影音作品皆具備頂尖的視覺與精準的市場打擊力。
+                </p>
+            </div>
+
+            <!-- Steps Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <!-- Step 1 -->
+                <div class="relative bg-neutral-900 border border-white/5 p-8 rounded-2xl space-y-4">
+                    <span class="text-5xl font-black text-brand-gold/20 block">01</span>
+                    <h3 class="text-lg font-bold text-white">創意發想與腳本設計</h3>
+                    <p class="text-sm text-neutral-400">深入研究品牌基因與受眾偏好，將商業置入點精準包裝於 Vlog 敘事中。不落俗套，保證觀看流暢度。</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="relative bg-neutral-900 border border-white/5 p-8 rounded-2xl space-y-4">
+                    <span class="text-5xl font-black text-brand-gold/20 block">02</span>
+                    <h3 class="text-lg font-bold text-white">實地探勘與高規拍攝</h3>
+                    <p class="text-sm text-neutral-400">導演、攝影師親臨現場調度。使用全畫幅相機及高靈敏音訊設備，精準捕捉美食誘人光澤、人文情感與空間美學。</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="relative bg-neutral-900 border border-white/5 p-8 rounded-2xl space-y-4">
+                    <span class="text-5xl font-black text-brand-gold/20 block">03</span>
+                    <h3 class="text-lg font-bold text-white">好萊塢級影音後製</h3>
+                    <p class="text-sm text-neutral-400">大師級調色技術，搭配與知名獨立音樂人授權配樂，給予觀眾電影院級別的感官洗禮。</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="relative bg-neutral-900 border border-white/5 p-8 rounded-2xl space-y-4">
+                    <span class="text-5xl font-black text-brand-gold/20 block">04</span>
+                    <h3 class="text-lg font-bold text-white">跨平台矩陣行銷</h3>
+                    <p class="text-sm text-neutral-400">結合 YouTube 長影音、Instagram Reels 碎裂化短片與 Threads 的話題行銷。創造多次曝光爆點。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & RECRUITMENT FORM SECTION -->
+    <section id="contact" class="py-24 bg-gradient-to-b from-neutral-900 to-brand-darkBg relative">
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold text-brand-gold tracking-widest uppercase">BE OUR SUGAR PARTNER / 與我們合作</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-2">
+                    開啟頂級品牌企劃
+                </h2>
+                <p class="text-neutral-400 mt-4">
+                    請填寫以下合作表單，我們的行銷總監將於 24 小時內與您聯繫，並為您遞交專屬的 Vlog 招商詳細簡報 PDF。
+                </p>
+            </div>
+
+            <!-- Modern Form Card -->
+            <div class="bg-brand-cardBg border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl relative">
+                <!-- Form decorative line -->
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-1.5 bg-gradient-to-r from-brand-orange to-brand-gold rounded-b-full"></div>
+
+                <form id="collaborationForm" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Company Name -->
+                        <div>
+                            <label class="block text-xs font-bold text-neutral-300 uppercase tracking-wider mb-2" for="company">
+                                品牌/企業名稱 <span class="text-brand-orange">*</span>
+                            </label>
+                            <input type="text" id="company" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-brand-gold transition duration-300 placeholder-neutral-600" placeholder="例：台南精釀餐飲集團">
+                        </div>
+                        <!-- Contact Person -->
+                        <div>
+                            <label class="block text-xs font-bold text-neutral-300 uppercase tracking-wider mb-2" for="contact_name">
+                                聯絡人姓名/職稱 <span class="text-brand-orange">*</span>
+                            </label>
+                            <input type="text" id="contact_name" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-brand-gold transition duration-300 placeholder-neutral-600" placeholder="例：王小明 經理">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Email -->
+                        <div>
+                            <label class="block text-xs font-bold text-neutral-300 uppercase tracking-wider mb-2" for="email">
+                                電子信箱 <span class="text-brand-orange">*</span>
+                            </label>
+                            <input type="email" id="email" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-brand-gold transition duration-300 placeholder-neutral-600" placeholder="name@company.com">
+                        </div>
+                        <!-- Phone -->
+                        <div>
+                            <label class="block text-xs font-bold text-neutral-300 uppercase tracking-wider mb-2" for="phone">
+                                聯絡電話
+                            </label>
+                            <input type="tel" id="phone" class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-brand-gold transition duration-300 placeholder-neutral-600" placeholder="0912-345-678">
+                        </div>
+                    </div>
+
+                    <!-- Selected package -->
+                    <div>
+                        <label class="block text-xs font-bold text-neutral-300 uppercase tracking-wider mb-2" for="package_select">
+                            意向合作方案 <span class="text-brand-orange">*</span>
+                        </label>
+                        <select id="package_select" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-brand-gold transition duration-300">
+                            <option value="none" disabled selected class="text-neutral-500">請選擇方案</option>
+                            <option value="風味探店置入" class="bg-brand-cardBg">置入：風味探店置入</option>
+                            <option value="深度品牌專屬特輯" class="bg-brand-cardBg">專題：深度品牌專屬特輯</option>
+                            <option value="年度品牌聯名大使" class="bg-brand-cardBg">代言：年度品牌聯名大使</option>
+                        </select>
+                    </div>
+
+                    <!-- Brand introduction -->
+                    <div>
+                        <label class="block text-xs font-bold text-neutral-300 uppercase tracking-wider mb-2" for="message">
+                            品牌說明或企劃構想
+                        </label>
+                        <textarea id="message" rows="4" class="w-full bg-black/40 border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-brand-gold transition duration-300 placeholder-neutral-600" placeholder="請簡單敘述您的品牌屬性、預估合作的時間點與希望達成的宣傳目標..."></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-brand-orange to-brand-gold text-brand-darkBg font-black text-lg rounded-xl shadow-2xl shadow-brand-orange/20 hover:shadow-brand-orange/40 hover:-translate-y-0.5 transition-all duration-300">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> 發送合作意向，取得招商簡報
+                    </button>
+                </form>
+
+                <!-- Hidden Google Form for background submission -->
+                <form id="googleForm" action="https://docs.google.com/forms/d/e/1FAIpQLScKZIOwIaTmOvT_k-aZ2teAMO2QUnK9VO0LwqqYs42aBwsWFw/formResponse" method="POST" target="hidden_iframe" class="hidden" novalidate>
+                    <input type="hidden" name="entry.588998168" id="g_name" value="">
+                    <input type="hidden" name="entry.476214014" id="g_email" value="">
+                    <input type="hidden" name="entry.1610329698" id="g_package" value="">
+                    <input type="hidden" name="entry.1646642689" id="g_summary" value="">
+                </form>
+                <iframe id="hidden_iframe" name="hidden_iframe" class="hidden" title="Google 表單隱藏提交框架"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Feedback Toast (Avoid standard Alert) -->
+    <div id="toast" class="fixed bottom-8 right-8 z-50 transform translate-y-24 opacity-0 transition-all duration-500 max-w-sm w-full bg-brand-cardBg border border-brand-gold/30 rounded-2xl p-6 shadow-2xl flex items-start space-x-4">
+        <div class="w-10 h-10 bg-brand-gold/20 text-brand-gold rounded-full flex items-center justify-center flex-shrink-0">
+            <i class="fa-solid fa-circle-check text-xl"></i>
+        </div>
+        <div class="flex-1">
+            <h4 class="text-white font-bold mb-1">需求已送出，我們將盡快與您聯絡！</h4>
+            <p class="text-xs text-neutral-400 leading-relaxed">感謝您對 Sugar Player 的信任，合作需求已送出，請留意信箱與簡訊通知。</p>
+        </div>
+        <button id="closeToast" class="text-neutral-500 hover:text-white transition">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-neutral-950 border-t border-white/10 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- Branding column -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 bg-gradient-to-tr from-brand-orange to-brand-gold rounded-lg flex items-center justify-center">
+                            <span class="text-white font-black text-sm">S</span>
+                        </div>
+                        <span class="text-white font-black text-lg tracking-wider">Sugar Player</span>
+                    </div>
+                    <p class="text-xs text-neutral-500 leading-relaxed">
+                        台南府城 400 年，一場重塑視覺美學的高階美食與旅遊紀實。以故事、品味、鏡頭與糖分，建立跨世代消費者的深度品牌連結。
+                    </p>
+                </div>
+
+                <!-- Fast Links -->
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-4 uppercase tracking-widest">快速連結</h4>
+                    <ul class="space-y-2 text-xs text-neutral-400">
+                        <li><a href="#concept" class="hover:text-brand-gold transition">企劃理念</a></li>
+                        <li><a href="#stats" class="hover:text-brand-gold transition">影響力數據</a></li>
+                        <li><a href="#packages" class="hover:text-brand-gold transition">合作方案</a></li>
+                        <li><a href="#process" class="hover:text-brand-gold transition">製作流程</a></li>
+                    </ul>
+                </div>
+
+                <!-- Video Origin -->
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-4 uppercase tracking-widest">影片出處</h4>
+                    <ul class="space-y-2 text-xs text-neutral-400">
+                        <li>Vlog 拍攝頻道：張室 Chang Shì</li>
+                        <li>集數：台南府城400年 Vol.1｜當一個Sugar Player</li>
+                        <li><a href="https://youtu.be/5glMGfxxONg?si=UyBEcLDUOzOBqZfW" target="_blank" class="text-brand-gold hover:underline"><i class="fa-brands fa-youtube mr-1"></i> 前往原片支持</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Tech -->
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-4 uppercase tracking-widest">招商聯繫</h4>
+                    <p class="text-xs text-neutral-400 leading-relaxed mb-4">
+                        台北市大安區光復南路 Vlog 創作營運辦公室
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 bg-white/5 hover:bg-brand-gold hover:text-brand-darkBg text-neutral-400 rounded-full flex items-center justify-center transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-8 h-8 bg-white/5 hover:bg-brand-gold hover:text-brand-darkBg text-neutral-400 rounded-full flex items-center justify-center transition"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="w-8 h-8 bg-white/5 hover:bg-brand-gold hover:text-brand-darkBg text-neutral-400 rounded-full flex items-center justify-center transition"><i class="fa-regular fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright and legal -->
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                <span class="text-xs text-neutral-600">
+                    &copy; 2026 Sugar Player Vlog Production, All Rights Reserved. Designed by Shì Design Masters.
+                </span>
+                <div class="flex space-x-6 text-xs text-neutral-600">
+                    <a href="#" class="hover:text-neutral-400">隱私權政策</a>
+                    <a href="#" class="hover:text-neutral-400">服務條款</a>
+                    <a href="#" class="hover:text-neutral-400">品牌授權規章</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT CONTROLLERS -->
+    <script>
+        // Header Blur Control on scroll
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-brand-darkBg/90', 'shadow-2xl', 'py-3');
+                header.classList.remove('bg-black/20', 'py-4');
+            } else {
+                header.classList.remove('bg-brand-darkBg/90', 'shadow-2xl', 'py-3');
+                header.classList.add('bg-black/20', 'py-4');
+            }
+        });
+
+        // Mobile Menu Toggling
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+        });
+
+        const closeMobileMenu = () => {
+            mobileMenu.classList.remove('flex');
+            mobileMenu.classList.add('hidden');
+        };
+
+        closeMenuBtn.addEventListener('click', closeMobileMenu);
+
+        // Close mobile menu on clicking any navigation item
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Auto selection from card click
+        function selectPackage(packageName) {
+            const selectEl = document.getElementById('package_select');
+            selectEl.value = packageName;
+        }
+
+        // Custom Toast system (Instead of blocked native alerts)
+        const form = document.getElementById('collaborationForm');
+        const googleForm = document.getElementById('googleForm');
+        const toast = document.getElementById('toast');
+        const closeToast = document.getElementById('closeToast');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            const company = document.getElementById('company').value.trim();
+            const contactName = document.getElementById('contact_name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const packageValue = document.getElementById('package_select').value;
+            const message = document.getElementById('message').value.trim();
+
+            document.getElementById('g_name').value = contactName;
+            document.getElementById('g_email').value = email;
+            document.getElementById('g_package').value = packageValue;
+            document.getElementById('g_summary').value = `品牌/企業：${company || '未提供'}\n聯絡電話：${phone || '未提供'}\n合作說明：${message || '請補充更多需求細節'}`;
+
+            // Submit via hidden iframe so page does not redirect to Google Forms
+            googleForm.submit();
+
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            form.reset();
+
+            setTimeout(() => {
+                hideToast();
+            }, 6000);
+        });
+
+        function hideToast() {
+            toast.classList.remove('translate-y-0', 'opacity-100');
+            toast.classList.add('translate-y-24', 'opacity-0');
+        }
+
+        closeToast.addEventListener('click', hideToast);
+    </script>
+</body>
+</html>
